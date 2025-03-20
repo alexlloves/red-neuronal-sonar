@@ -5,6 +5,15 @@ from StandardScaler import StandardScaler
 from torch.utils.data import Dataset
 
 class SonarDataset(Dataset):
+    """
+    SonarDataset es una clase personalizada para manejar un conjunto de datos basado en PyTorch.
+    
+    Su propósito es cargar los datos desde un archivo CSV, realizar la normalización de las características 
+    y convertir la variable objetivo en formato one-hot encoding para su uso en modelos de clasificación.
+
+    Hereda de `torch.utils.data.Dataset`, lo que permite utilizarlo con `torch.utils.data.DataLoader`
+    para cargar los datos de manera eficiente en lotes.
+    """
     def __init__(self, src_file, root_dir, transform=None):
         fake_names = [f"Atribute{i}" for i in range(60)] + ["class"]
 

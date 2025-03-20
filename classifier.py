@@ -2,7 +2,16 @@ from Model import Model
 import torch
 
 def load_model_and_classify(input_data):
+    """
+    Carga el modelo previamente entrenado, realiza la inferencia sobre los datos de entrada
+    y devuelve la clase predicha.
 
+    Args:
+        input_data (list): Lista con las características de entrada que queremos clasificar.
+    
+    Returns:
+        int: La clase predicha (0 o 1, dependiendo de la salida de la red neuronal).
+    """
     loaded_model = Model(4)
     loaded_model.load_state_dict(torch.load('models/iris_model.pth', weights_only=True))
     loaded_model.eval()
