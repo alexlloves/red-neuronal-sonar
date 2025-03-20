@@ -1,0 +1,13 @@
+name: neural
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pytorch
+  - pytest
+  - pandas
+  - scikit-learn
+  - tensorboard
+  - matplotlib
